@@ -1,10 +1,13 @@
 {
-  "plugins": ["testcafe"],
-  "extends": [
-    "./node_modules/kcd-scripts/eslint.js",
-    "plugin:testcafe/recommended"
-  ],
-  "rules": {
-    "babel/new-cap": "off"
-  }
+    "plugins": [
+        "testcafe"
+    ],
+    "extends": [
+        "./node_modules/kcd-scripts/eslint.js",
+        "plugin:testcafe/recommended"
+    ],
+    "rules": {
+        "babel/new-cap": "off",
+        "func-names": 0
+    }
 }

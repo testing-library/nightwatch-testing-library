@@ -1,5 +1,5 @@
 {
-  "name": "@testing-library/testcafe",
+  "name": "@testing-library/nightwatch",
   "version": "1.0.1-semantically-released",
   "description": "",
   "main": "dist/index.js",
@@ -10,11 +10,11 @@
     "lint": "kcd-scripts lint",
     "test:unit": "kcd-scripts test --no-watch --config=jest.config.js",
     "test:unit:monorepo": "cd tests/unit && kcd-scripts test --no-watch --config=../../jest.config.js",
-    "test:testcafe:serve": "serve --listen 13370 ./test-app",
-    "test:testcafe:run": "testcafe --skip-js-errors",
+    "test:nightwatch:serve": "serve --listen 13370 ./test-app",
+    "test:nightwatch:run": "nightwatch",
     "validate": "kcd-scripts validate build,lint,test",
-    "test:testcafe": "npm-run-all --silent --parallel --race test:testcafe:serve test:testcafe:run",
-    "test": "npm-run-all --parallel test:unit test:unit:monorepo test:testcafe",
+    "test:nightwatch": "npm-run-all --silent --parallel --race test:nightwatch:serve test:nightwatch:run",
+    "test": "npm-run-all --parallel test:unit test:unit:monorepo test:nightwatch",
     "semantic-release": "semantic-release"
   },
   "files": [
@@ -27,11 +27,12 @@
   "dependencies": {
     "@babel/runtime": "^7.4.3",
     "@testing-library/dom": "^6.3.0",
-    "testcafe": "^1.5.0"
+    "nightwatch": "^1.2.4"
   },
   "devDependencies": {
+    "chromedriver": "^77.0.0",
     "eslint": "^5.16.0",
-    "eslint-plugin-testcafe": "^0.2.1",
+    "eslint-plugin-nightwatch": "^0.2.1",
     "kcd-scripts": "^1.2.1",
     "npm-run-all": "^4.1.5",
     "semantic-release": "^16.0.0-beta.22",
@@ -39,7 +40,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/testing-library/testcafe-testing-library.git"
+    "url": "https://github.com/testing-library/nightwatch-testing-library.git"
   },
   "release": {
     "branches": [

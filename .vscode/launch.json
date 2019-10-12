@@ -14,9 +14,12 @@
       "type": "node",
       "protocol": "inspector",
       "request": "launch",
-      "name": "Launch test files with TestCafe",
-      "program": "${workspaceRoot}/node_modules/testcafe/bin/testcafe.js",
-      "args": ["chrome", "${relativeFile}"],
+      "name": "Launch test files with nightwatch",
+      "program": "${workspaceRoot}/node_modules/nightwatch/bin/nightwatch.js",
+      "args": [
+        "chrome",
+        "${relativeFile}"
+      ],
       "console": "integratedTerminal",
       "cwd": "${workspaceRoot}"
     }
