@@ -1,0 +1,19 @@
+{
+    "src_folders": [
+        "tests/nightwatch"
+    ],
+    "custom_commands_path": "src",
+    "globals_path": "src/globals",
+    "webdriver": {
+        "start_process": true,
+        "server_path": "node_modules/.bin/chromedriver",
+        "port": 9515
+    },
+    "test_settings": {
+        "default": {
+            "desiredCapabilities": {
+                "browserName": "chrome"
+            }
+        }
+    }
+}
