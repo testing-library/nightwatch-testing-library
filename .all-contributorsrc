@@ -1,0 +1,67 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "benmonro",
+      "name": "Ben Monro",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/399236?v=4",
+      "profile": "https://github.com/benmonro",
+      "contributions": [
+        "doc",
+        "code",
+        "test",
+        "infra",
+        "ideas"
+      ]
+    },
+    {
+      "login": "kentcdodds",
+      "name": "Kent C. Dodds",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1500684?v=4",
+      "profile": "https://kentcdodds.com",
+      "contributions": [
+        "infra",
+        "ideas",
+        "code"
+      ]
+    },
+    {
+      "login": "miherlosev",
+      "name": "Mikhail Losev",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/4133518?v=4",
+      "profile": "https://twitter.com/miherlosev",
+      "contributions": [
+        "code",
+        "question"
+      ]
+    },
+    {
+
+      "login": "vanhoofmaarten",
+      "name": "Maarten Van Hoof",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2543633?v=4",
+      "profile": "http://mrtnvh.com",
+      "contributions": [
+        "code"
+      ]
+     },
+     {
+      "login": "dobogo",
+      "name": "Katsuya Hino",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1498117?v=4",
+      "profile": "https://github.com/dobogo",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "testcafe-testing-library",
+  "projectOwner": "testing-library",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
