@@ -7,7 +7,7 @@ module.exports = {
 
             browser.click(element);
             browser
-                .pause(1000000)
+                // .pause(1000000)
                 .end();
         })
 
