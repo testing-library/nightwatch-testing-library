@@ -9,18 +9,16 @@ const DOM_TESTING_LIBRARY_UMD_PATH = path.join(
   'dist/@testing-library/dom.umd.js',
 )
 const DOM_TESTING_LIBRARY_UMD = fs.readFileSync(DOM_TESTING_LIBRARY_UMD_PATH).toString()
+const XPATH = fs.readFileSync(require.resolve('./xpath.js')).toString();
 
 module.exports = {
-
-  // this.injectScript(DOM_TESTING_LIBRARY_UMD_PATH, 'DTL', function () {
-  //   console.log('here')
-  // });
   beforeEach(browser, done) {
 
     browser
-      .url('http://localhost:13370').execute(DOM_TESTING_LIBRARY_UMD);
+      .url('http://localhost:13370').execute(DOM_TESTING_LIBRARY_UMD).execute(function () {
+        return window.TestingLibraryDom.getByText(document.body, 'getByText');
+      }).execute(XPATH);
     done()
   }
-  //this.execute('document.append("hello")')
-  // this.execute(`document.write(\`<script>${DOM_TESTING_LIBRARY_UMD}</script>\`)`);
+
 }

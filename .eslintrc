@@ -8,6 +8,7 @@
     ],
     "rules": {
         "babel/new-cap": "off",
-        "func-names": 0
+        "func-names": 0,
+        "no-unused-vars": 0
     }
 }
