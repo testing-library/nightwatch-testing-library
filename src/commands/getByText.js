@@ -11,7 +11,7 @@ module.exports.command = function (text, callback) {
             return { xpath, tagName: elm.tagName };
         }, [text], (result) => {
             const { value: { xpath, tagName } } = result;
-            resolve({ selector: tagName, value: xpath, locatorStrategy: 'xpath' })
+            callback.call(self, { selector: tagName, value: xpath, locatorStrategy: 'xpath' })
 
         });
     });
