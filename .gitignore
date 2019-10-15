@@ -81,3 +81,4 @@ jspm_packages/
 .dynamodb/
 dist
 ignorethis.txt
+tests_output
