@@ -4,14 +4,34 @@ module.exports.getQueriesFrom = (browser) => {
     const queries = {};
     Object.keys(baseQueries).forEach(queryName => {
         queries[queryName] = (...args) => new Promise((resolve, reject) => {
+            args = args.map(arg => {
+                if (arg instanceof RegExp) {
+                    return { RegExp: arg.toString() };
+                }
+                return arg;
+            })
             // eslint-disable-next-line no-shadow
             browser.execute(function (queryName, ...args) {
                 try {
-                    const elm = window.TestingLibraryDom[queryName](document.body, ...args);
+                    args = args.map(arg => {
+                        if (arg.RegExp) {
+                            return eval(arg.RegExp);
+                        }
+                        return arg;
+                    });
+                    if (/AllBy/.test(queryName)) {
+                        const elms = window.TestingLibraryDom[queryName](document.body, ...args);
 
-                    const selector = window.Simmer(elm);
+                        const selector = elms.map(elm => window.Simmer(elm)).join(", ");
 
-                    return { selector };
+                        return { selector };
+                    } else {
+                        const elm = window.TestingLibraryDom[queryName](document.body, ...args);
+
+                        const selector = window.Simmer(elm);
+
+                        return { selector };
+                    }
                 } catch (e) {
                     return { error: { message: e.message, stack: e.stack } };
                 }
@@ -26,6 +46,7 @@ module.exports.getQueriesFrom = (browser) => {
                     reject({ selector: queryName, value: [...args], locatorStrategy: queryName })
                 }
                 const { value: selector } = result;
+                selector.nth = (index) => ({ ...selector, index });
                 resolve(selector)
 
 

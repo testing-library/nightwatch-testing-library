@@ -35,6 +35,50 @@ module.exports = {
 
         browser.expect.element(input).value.to.equal('Hello Input Labelled by Id');
 
-    }
+    },
+
+    async 'getByAltText'(browser) {
+        const { getByAltText } = getQueriesFrom(browser);
+        const image = await getByAltText('Image Alt Text');
+
+        browser.click(image);
+        browser.expect.element(image).to.have.css('border').which.equals("5px solid rgb(255, 0, 0)")
+    },
+    async 'getByTestId'(browser) {
+        const { getByTestId } = getQueriesFrom(browser);
+        browser.click(await getByTestId('image-with-random-alt-tag'))
+    },
+
+    async 'getAllByText'(browser) {
+        const { getAllByText } = getQueriesFrom(browser);
+        const chans = await getAllByText("Jackie Chan", { exact: false })
+
+
+        browser.expect.elements(chans).count.to.equal(2)
+
+    },
+
+    async 'getAllByText - regex'(browser) {
+        const { getAllByText } = getQueriesFrom(browser);
+        const chans = await getAllByText(/Jackie Chan/)
+
+
+        browser.expect.elements(chans).count.to.equal(2)
+
+        const firstChan = chans.nth(0);
+        const secondChan = chans.nth(1);
+        browser.expect.element(firstChan).text.to.equal("Jackie Chan 1");
+
+        browser.expect.element(secondChan).text.to.equal("Jackie Chan 2");
+        browser.click(chans.nth(1));
+
+        browser.expect.element(secondChan).text.to.equal("Jackie Kicked");
+        browser.click(chans.nth(0));
+
+        browser.expect.element(firstChan).text.to.equal("Jackie Kicked");
+
+    },
+
+
 
 };
