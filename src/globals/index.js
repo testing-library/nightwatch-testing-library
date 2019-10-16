@@ -9,16 +9,17 @@ const DOM_TESTING_LIBRARY_UMD_PATH = path.join(
   'dist/@testing-library/dom.umd.js',
 )
 const DOM_TESTING_LIBRARY_UMD = fs.readFileSync(DOM_TESTING_LIBRARY_UMD_PATH).toString()
-const XPATH = fs.readFileSync(require.resolve('./xpath.js')).toString();
-
+const SIMMERJS = fs.readFileSync(require.resolve('simmerjs/dist/simmer.js')).toString();
 module.exports = {
   beforeEach(browser, done) {
-
+    console.log(SIMMERJS)
     browser
-      .url('http://localhost:13370').execute(DOM_TESTING_LIBRARY_UMD).execute(function () {
+      .url('http://localhost:13370').execute(DOM_TESTING_LIBRARY_UMD)
+      .execute(function () {
         return window.TestingLibraryDom.getByText(document.body, 'getByText');
-      }).execute(XPATH);
-    done()
+      })
+      .execute(SIMMERJS);
+    done();
   }
 
 }

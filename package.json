@@ -27,7 +27,8 @@
   "dependencies": {
     "@babel/runtime": "^7.4.3",
     "@testing-library/dom": "^6.3.0",
-    "nightwatch": "^1.2.4"
+    "nightwatch": "^1.2.4",
+    "simmerjs": "^0.5.6"
   },
   "devDependencies": {
     "chromedriver": "^77.0.0",

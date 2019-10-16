@@ -1,35 +1,40 @@
+const { getQueriesFrom } = require('../../src');
 
 module.exports = {
 
-    'Button click works'(browser) {
-        browser.getByText('Unique Button Text', (button) => {
+
+    async 'Button click works'(browser) {
+        const { getByText } = getQueriesFrom(browser);
+        const button = await getByText('Unique Button Text');
 
 
-            browser.expect.element(button).text.not.to.equal('Button Clicked')
+        browser.expect.element(button).text.not.to.equal('Button Clicked')
 
-            browser.click(button);
+        browser.click(button);
 
-            browser.expect.element(button).text.to.equal('Button Clicked')
+        browser.expect.element(button).text.to.equal('Button Clicked')
 
-
-        })
     },
 
-    'getByPlaceholderText'(browser) {
-        browser.getByPlaceholderText('Placeholder Text', (input) => {
+    async 'getByPlaceholderText'(browser) {
 
-            browser.expect.element(input).value.not.to.equal('Hello Placeholder');
-            browser.setValue(input, 'Hello Placeholder');
+        const { getByPlaceholderText } = getQueriesFrom(browser);
+        const input = await getByPlaceholderText('Placeholder Text');
 
-            browser.expect.element(input).value.to.equal('Hello Placeholder');
-        })
+        browser.expect.element(input).value.not.to.equal('Hello Placeholder');
+        browser.setValue(input, 'Hello Placeholder');
+
+        browser.expect.element(input).value.to.equal('Hello Placeholder');
+
     },
 
-    // 'getByLabelText'(browser) {
-    //     browser.getByLabelText('Label For Input Labelled By Id', (input) => {
-    //         browser.setValue(input, 'Hello Input Labelled by Id');
+    async 'getByLabelText'(browser) {
+        const { getByLabelText } = getQueriesFrom(browser);
+        const input = await getByLabelText('Label For Input Labelled By Id');
+        browser.setValue(input, 'Hello Input Labelled by Id');
 
-    //         browser.expect.element(input).value.to.equal('Hello Input Labelled by Id');
-    //     });
-    // }
+        browser.expect.element(input).value.to.equal('Hello Input Labelled by Id');
+
+    }
+
 };

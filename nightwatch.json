@@ -2,7 +2,6 @@
     "src_folders": [
         "tests/nightwatch"
     ],
-    "custom_commands_path": "src/commands",
     "globals_path": "src/globals",
     "webdriver": {
         "start_process": true,
