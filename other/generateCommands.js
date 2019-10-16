@@ -1,4 +1,14 @@
+const path = require('path');
+const fs = require('fs');
+const { promisify } = require('util');
+const { queries } = require('@testing-library/dom');
 
+
+const writeFile = promisify(fs.writeFile);
+
+const fileWrites = Object.keys(queries).map(queryName => {
+
+    const commandCode = `
     const DTLError = require('../DTLError');
 
     module.exports.command = function (text, callback) {
@@ -8,7 +18,7 @@
         // eslint-disable-next-line no-shadow
         this.execute(function (text) {
             try {
-                const elm = window.TestingLibraryDom.getByText(document.body, text);
+                const elm = window.TestingLibraryDom.${queryName}(document.body, text);
     
                 const xpath = window.createXPathFromElement(elm);
     
@@ -24,7 +34,7 @@
                 // have to dump the error message here.
                 // eslint-disable-next-line no-console
                 console.error(message);
-                callback.call(self, { selector: 'getByText', value: text, locatorStrategy: 'getByText' })
+                callback.call(self, { selector: '${queryName}', value: text, locatorStrategy: '${queryName}' })
             }
             const { value: { xpath, tagName } } = result;
             callback.call(self, { selector: tagName, value: xpath, locatorStrategy: 'xpath' })
@@ -33,4 +43,13 @@
         });
     
     }
-    
+    `;
+
+
+    return writeFile(path.resolve(`./src/commands/${queryName}.js`), commandCode);
+
+});
+
+Promise.all(fileWrites).then(() => {
+    console.log('Done');
+})
