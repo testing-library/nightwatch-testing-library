@@ -12,7 +12,6 @@ const DOM_TESTING_LIBRARY_UMD = fs.readFileSync(DOM_TESTING_LIBRARY_UMD_PATH).to
 const SIMMERJS = fs.readFileSync(require.resolve('simmerjs/dist/simmer.js')).toString();
 module.exports = {
   beforeEach(browser, done) {
-    console.log(SIMMERJS)
     browser
       .url('http://localhost:13370').execute(DOM_TESTING_LIBRARY_UMD)
       .execute(function () {

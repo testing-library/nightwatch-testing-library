@@ -1,7 +1,5 @@
 {
-    "plugins": [
-        "testcafe"
-    ],
+    "plugins": [],
     "extends": [
         "./node_modules/kcd-scripts/eslint.js",
         "plugin:testcafe/recommended"
