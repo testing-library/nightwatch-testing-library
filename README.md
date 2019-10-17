@@ -20,7 +20,7 @@
 [![MIT License][license-badge]][license]
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 [![PRs Welcome][prs-badge]][prs]
 [![Code of Conduct][coc-badge]][coc]
 
@@ -83,7 +83,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/benmonro"><img src="https://avatars3.githubusercontent.com/u/399236?v=4" width="100px;" alt="Ben Monro"/><br /><sub><b>Ben Monro</b></sub></a><br /><a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=benmonro" title="Documentation">📖</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=benmonro" title="Code">💻</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=benmonro" title="Tests">⚠️</a> <a href="#infra-benmonro" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-benmonro" title="Ideas, Planning, & Feedback">🤔</a></td>
     <td align="center"><a href="https://kentcdodds.com"><img src="https://avatars0.githubusercontent.com/u/1500684?v=4" width="100px;" alt="Kent C. Dodds"/><br /><sub><b>Kent C. Dodds</b></sub></a><br /><a href="#infra-kentcdodds" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#ideas-kentcdodds" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=kentcdodds" title="Code">💻</a></td>
-    
+    <td align="center"><a href="https://github.com/appleJax"><img src="https://avatars1.githubusercontent.com/u/13618860?v=4" width="100px;" alt="Kevin Brewer"/><br /><sub><b>Kevin Brewer</b></sub></a><br /><a href="#ideas-appleJax" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/testing-library/nightwatch-testing-library/commits?author=appleJax" title="Code">💻</a></td>
   </tr>
 </table>
 
