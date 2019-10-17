@@ -9,12 +9,11 @@
     "build": "kcd-scripts build",
     "lint": "kcd-scripts lint",
     "test:unit": "kcd-scripts test --no-watch --config=jest.config.js",
-    "test:unit:monorepo": "cd tests/unit && kcd-scripts test --no-watch --config=../../jest.config.js",
     "test:nightwatch:serve": "serve --listen 13370 ./test-app",
     "test:nightwatch:run": "nightwatch",
     "validate": "kcd-scripts validate build,lint,test",
     "test:nightwatch": "npm-run-all --silent --parallel --race test:nightwatch:serve test:nightwatch:run",
-    "test": "npm-run-all --parallel test:unit test:unit:monorepo test:nightwatch",
+    "test": "npm-run-all --parallel test:nightwatch",
     "semantic-release": "semantic-release"
   },
   "files": [
