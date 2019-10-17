@@ -12,12 +12,22 @@ const DOM_TESTING_LIBRARY_UMD_PATH = path.join(
 const DOM_TESTING_LIBRARY_UMD = fs.readFileSync(DOM_TESTING_LIBRARY_UMD_PATH).toString()
 const SIMMERJS = fs.readFileSync(require.resolve('simmerjs/dist/simmer.js')).toString();
 
+let _config = null;
+
 function injectNWTL(browser) {
-    browser
-        .execute(DOM_TESTING_LIBRARY_UMD)
-    browser.execute(SIMMERJS)
+    browser.execute(DOM_TESTING_LIBRARY_UMD);
+
+    browser.execute(SIMMERJS);
+
+    if (_config) {
+        // eslint-disable-next-line no-shadow
+        browser.execute(function (_config) {
+            window.TestingLibraryDom.configure(_config);
+        }, [_config])
+    }
 
 }
+
 
 module.exports.getQueriesFrom = (browser) => {
     const queries = {};
@@ -82,4 +92,8 @@ module.exports.getQueriesFrom = (browser) => {
     });
 
     return queries;
+}
+
+module.exports.configure = (config) => {
+    _config = config;
 }
