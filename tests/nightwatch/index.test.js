@@ -33,6 +33,7 @@ module.exports = {
 
     },
 
+
     async 'getByLabelText'(browser) {
         const { getByLabelText } = getQueriesFrom(browser);
         const input = await getByLabelText('Label For Input Labelled By Id');
@@ -94,7 +95,29 @@ module.exports = {
         browser.assert.elementNotPresent(nonExistentButtons);
 
 
-    }
+    },
+
+    async 'still works after page navigation'(browser) {
+        const { getByText } = getQueriesFrom(browser);
+
+        const page2 = await getByText('Go to Page 2');
+
+        browser.click(page2);
+
+        browser.expect.element(await getByText('second page')).to.be.present;
+    },
+
+    async 'still works after refresh'(browser) {
+        const { getByText } = getQueriesFrom(browser);
+
+        browser.click(await getByText('Go to Page 2'));
+
+        browser.back();
+        browser.refresh();
+
+        browser.expect.element(await getByText('getByText')).to.be.present;
+    },
+
 
 
 
