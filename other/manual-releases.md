@@ -1,1 +1,1 @@
-Number of manual releases: 1
+Number of manual releases: 2
