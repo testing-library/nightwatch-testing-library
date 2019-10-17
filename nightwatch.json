@@ -2,7 +2,6 @@
     "src_folders": [
         "tests/nightwatch"
     ],
-    "globals_path": "src/globals",
     "webdriver": {
         "start_process": true,
         "server_path": "node_modules/.bin/chromedriver",

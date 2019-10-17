@@ -1,4 +1,23 @@
+
+const path = require('path');
+const fs = require('fs');
 const { queries: baseQueries } = require('@testing-library/dom');
+// import { queries } from '@testing-library/dom'
+
+const DOM_TESTING_LIBRARY_UMD_PATH = path.join(
+    require.resolve('@testing-library/dom'),
+    '../../',
+    'dist/@testing-library/dom.umd.js',
+)
+const DOM_TESTING_LIBRARY_UMD = fs.readFileSync(DOM_TESTING_LIBRARY_UMD_PATH).toString()
+const SIMMERJS = fs.readFileSync(require.resolve('simmerjs/dist/simmer.js')).toString();
+
+function injectNWTL(browser) {
+    browser
+        .execute(DOM_TESTING_LIBRARY_UMD)
+    browser.execute(SIMMERJS)
+
+}
 
 module.exports.getQueriesFrom = (browser) => {
     const queries = {};
@@ -10,6 +29,8 @@ module.exports.getQueriesFrom = (browser) => {
                 }
                 return arg;
             })
+
+            injectNWTL(browser)
             // eslint-disable-next-line no-shadow
             browser.execute(function (queryName, ...args) {
                 try {
