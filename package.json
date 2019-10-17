@@ -46,5 +46,8 @@
       "master",
       "next"
     ]
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
