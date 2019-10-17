@@ -25,13 +25,13 @@ module.exports.getQueriesFrom = (browser) => {
 
                         const selector = elms.map(elm => window.Simmer(elm)).join(', ');
 
-                        return { selector };
+                        return selector;
                     } else {
                         const elm = window.TestingLibraryDom[queryName](document.body, ...args);
 
                         const selector = window.Simmer(elm);
 
-                        return { selector };
+                        return selector;
                     }
                 } catch (e) {
                     return { error: { message: e.message, stack: e.stack } };
@@ -46,9 +46,14 @@ module.exports.getQueriesFrom = (browser) => {
                     console.error(message);
                     reject({ selector: queryName, value: [...args], locatorStrategy: queryName })
                 }
-                const { value: selector } = result;
-                selector.nth = (index) => ({ ...selector, index });
-                resolve(selector)
+                let { value: selector } = result;
+                if (!selector) {
+                    selector = `.NWTL_${queryName}-${args[0].replace(/ /g, '-')}`
+                }
+                resolve({
+                    selector,
+                    nth(index) { return (({ selector, index })) }
+                })
 
 
             });
