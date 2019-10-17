@@ -15,6 +15,7 @@ module.exports.getQueriesFrom = (browser) => {
                 try {
                     args = args.map(arg => {
                         if (arg.RegExp) {
+                            // eslint-disable-next-line no-eval
                             return eval(arg.RegExp);
                         }
                         return arg;
@@ -22,7 +23,7 @@ module.exports.getQueriesFrom = (browser) => {
                     if (/AllBy/.test(queryName)) {
                         const elms = window.TestingLibraryDom[queryName](document.body, ...args);
 
-                        const selector = elms.map(elm => window.Simmer(elm)).join(", ");
+                        const selector = elms.map(elm => window.Simmer(elm)).join(', ');
 
                         return { selector };
                     } else {
