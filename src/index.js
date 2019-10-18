@@ -29,7 +29,7 @@ function injectNWTL(browser) {
 }
 
 
-module.exports.getQueriesFrom = (browser) => {
+const getQueriesFrom = (browser, container) => {
     const queries = {};
     Object.keys(baseQueries).forEach(queryName => {
         queries[queryName] = (...args) => new Promise((resolve, reject) => {
@@ -42,7 +42,7 @@ module.exports.getQueriesFrom = (browser) => {
 
             injectNWTL(browser)
             // eslint-disable-next-line no-shadow
-            browser.execute(function (queryName, ...args) {
+            browser.execute(function (queryName, container, ...args) {
                 try {
                     args = args.map(arg => {
                         if (arg.RegExp) {
@@ -51,14 +51,15 @@ module.exports.getQueriesFrom = (browser) => {
                         }
                         return arg;
                     });
+                    const root = container ? document.querySelector(container) : document.body;
                     if (/AllBy/.test(queryName)) {
-                        const elms = window.TestingLibraryDom[queryName](document.body, ...args);
+                        const elms = window.TestingLibraryDom[queryName](root, ...args);
 
                         const selector = elms.map(elm => window.Simmer(elm)).join(', ');
 
                         return selector;
                     } else {
-                        const elm = window.TestingLibraryDom[queryName](document.body, ...args);
+                        const elm = window.TestingLibraryDom[queryName](root, ...args);
 
                         const selector = window.Simmer(elm);
 
@@ -67,7 +68,7 @@ module.exports.getQueriesFrom = (browser) => {
                 } catch (e) {
                     return { error: { message: e.message, stack: e.stack } };
                 }
-            }, [queryName, ...args], (result) => {
+            }, [queryName, container, ...args], (result) => {
 
 
                 if (result.value.error) {
@@ -83,7 +84,8 @@ module.exports.getQueriesFrom = (browser) => {
                 }
                 resolve({
                     selector,
-                    nth(index) { return (({ selector, index })) }
+                    nth(index) { return (({ selector: selector.split(/, /)[index], browser: () => browser })) },
+                    browser: () => browser
                 })
 
 
@@ -93,7 +95,12 @@ module.exports.getQueriesFrom = (browser) => {
 
     return queries;
 }
-
-module.exports.configure = (config) => {
+const within = (selector) => {
+    return getQueriesFrom(selector.browser(), selector.selector);
+}
+const configure = (config) => {
     _config = config;
+}
+module.exports = {
+    configure, getQueriesFrom, within
 }

@@ -2,6 +2,11 @@ const { getQueriesFrom } = require('../../src');
 
 module.exports = {
 
+    beforeEach(browser, done) {
+        browser
+            .url('http://localhost:13370');
+        done()
+    },
 
     async 'Button click works'(browser) {
         const { getByText } = getQueriesFrom(browser);
