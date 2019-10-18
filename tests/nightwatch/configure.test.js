@@ -1,7 +1,5 @@
 const { configure, getQueriesFrom } = require('../../src');
 
-configure({ testIdAttribute: 'data-automation-id' });
-
 module.exports = {
     before() {
 

@@ -1,6 +1,5 @@
 <div align="center">
 <h1>nightwatch-testing-library</h1>
-<h1> Work In Progress Don't use this yet</h1>
 <a href="https://www.emojione.com/emoji/bat">
 <img height="100" width="100" alt="ox" src="https://raw.githubusercontent.com/testing-library/nightwatch-testing-library/master/other/bat.png" />
 
