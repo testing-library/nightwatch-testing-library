@@ -11,7 +11,7 @@ jobs:
     runs-on: '${{ matrix.os }}'
     strategy:
       matrix:
-        os: [windows-2019]
+        os: [ubuntu-latest]
         node: [12, 10]
         browser: ["chrome:headless"]
     steps:
