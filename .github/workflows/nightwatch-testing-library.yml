@@ -20,4 +20,5 @@ jobs:
           node-version: ${{ matrix.node }}
       - uses: actions/checkout@v1
       - run: npm ci
+      - run: npm i -D chromedriver@latest
       - run: npm run validate
