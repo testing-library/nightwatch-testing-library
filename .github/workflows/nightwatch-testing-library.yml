@@ -1,0 +1,23 @@
+name: nightwatch-testing-library
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+
+jobs:
+  test:
+    name: 'node ${{ matrix.node }} ${{matrix.browser}}  ${{ matrix.os }} '
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [12, 10]
+        browser: ["chrome:headless", "firefox:headless"]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run validate
