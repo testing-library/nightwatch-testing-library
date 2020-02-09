@@ -3,7 +3,7 @@
   "globals_path": "tests/globals",
   "webdriver": {
     "start_process": true,
-    "server_path": "node_modules/.bin/chromedriver",
+    "server_path": "chromedriver",
     "port": 9515
   },
   "test_settings": {
