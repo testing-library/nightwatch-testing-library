@@ -9,7 +9,15 @@
   "test_settings": {
     "default": {
       "desiredCapabilities": {
-        "browserName": "chrome"
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "prefs": {
+            "intl.accept_languages": "en-US,en"
+          },
+          "args": ["--headless"]
+        }
       }
     }
   }
