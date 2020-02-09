@@ -1,0 +1,43 @@
+name: nightwatch-testing-library
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+
+jobs:
+  test:
+    name: 'node ${{ matrix.node }} chrome ${{ matrix.os }} '
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [12, 10]
+    steps:
+      - uses: nanasess/setup-chromedriver@master
+        with:
+          chromedriver-version: '79.0.3945.36'
+      - run: |
+          export DISPLAY=:99
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run validate
+  release:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run build
+      - run: ls -asl dist
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
