@@ -15,17 +15,15 @@ jobs:
         node: [12, 10]
         browser: ['chrome:headless']
     steps:
-      - uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node }}
-      - uses: actions/checkout@v1
-
       - uses: nanasess/setup-chromedriver@master
         with:
           chromedriver-version: '79.0.3945.36'
       - run: |
           export DISPLAY=:99
-          chromedriver
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
-          npm ci
-          npm run validate
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - run: npm run validate
