@@ -2,14 +2,14 @@
   "src_folders": ["tests/nightwatch"],
   "globals_path": "tests/globals",
   "webdriver": {
-    "start_process": false,
-    "server_path": "chromedriver",
+    "start_process": true,
+    "server_path": "node_modules/.bin/chromedriver",
     "port": 9515
   },
   "test_settings": {
     "default": {
       "desiredCapabilities": {
-        "browserName": "chrome"
+        "browserName": "chrome:headless"
       }
     }
   }
