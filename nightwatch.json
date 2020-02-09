@@ -9,7 +9,7 @@
   "test_settings": {
     "default": {
       "desiredCapabilities": {
-        "browserName": "chrome:headless"
+        "browserName": "chrome"
       }
     }
   }
