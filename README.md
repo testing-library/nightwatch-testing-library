@@ -97,8 +97,8 @@ MIT
 
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
-[build-badge]: https://img.shields.io/travis/testing-library/nightwatch-testing-library.svg?style=flat-square
-[build]: https://travis-ci.org/testing-library/nightwatch-testing-library
+[build-badge]: https://github.com/testing-library/nightwatch-testing-library/workflows/nightwatch-testing-library/badge.svg
+[build]: https://github.com/testing-library/nightwatch-testing-library/actions?query=branch%3Amaster+workflow%3Anightwatch-testing-library
 [coverage]: https://codecov.io/github/testing-library/nightwatch-testing-library
 [version-badge]: https://img.shields.io/npm/v/@testing-library/nightwatch.svg?style=flat-square
 [package]: https://www.npmjs.com/package/@testing-library/nightwatch
