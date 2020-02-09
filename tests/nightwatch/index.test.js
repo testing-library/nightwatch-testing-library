@@ -91,7 +91,7 @@ module.exports = {
         const buttons = await queryAllByText('Button Text');
         const nonExistentButtons = await queryAllByText('non existent button');
 
-        browser.expect.elements(buttons).to.be.present;
+        browser.expect.elements(buttons).count.to.equal(2);
         browser.assert.elementNotPresent(nonExistentButtons);
 
 
