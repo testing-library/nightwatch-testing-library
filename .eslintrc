@@ -3,6 +3,10 @@
   "rules": {
     "babel/new-cap": "off",
     "func-names": "off",
-    "babel/no-unused-expressions": "off"
+    "babel/no-unused-expressions": "off",
+    "prefer-arrow-callback": "off",
+    "testing-library/no-await-sync-query": "off",
+    "testing-library/no-dom-import": "off",
+    "testing-library/prefer-screen-queries": "off"
   }
 }
