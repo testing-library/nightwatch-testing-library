@@ -1,12 +1,12 @@
 {
-    "plugins": [],
-    "extends": [
-        "./node_modules/kcd-scripts/eslint.js"
-    ],
-    "rules": {
-        "babel/new-cap": "off",
-        "func-names": 0,
-        "no-unused-vars": 0,
-        "babel/no-unused-expressions": 0
-    }
+  "extends": "./node_modules/kcd-scripts/eslint.js",
+  "rules": {
+    "babel/new-cap": "off",
+    "func-names": "off",
+    "babel/no-unused-expressions": "off",
+    "prefer-arrow-callback": "off",
+    "testing-library/no-await-sync-query": "off",
+    "testing-library/no-dom-import": "off",
+    "testing-library/prefer-screen-queries": "off"
+  }
 }
