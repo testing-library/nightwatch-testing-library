@@ -3,7 +3,6 @@
   "rules": {
     "babel/new-cap": "off",
     "func-names": "off",
-    "no-unused-vars": "off",
     "babel/no-unused-expressions": "off"
   }
 }
