@@ -123,4 +123,4 @@ MIT
 [dom-testing-library]: https://github.com/testing-library/dom-testing-library
 [nightwatch]: https://nightwatchjs.org/guide
 [discord-badge]: https://img.shields.io/discord/723559267868737556.svg?color=7389D8&labelColor=6A7EC2&logo=discord&logoColor=ffffff&style=flat-square
-[discord]: https://discord.gg/c6JN9fM
+[discord]: https://discord.gg/testing-library
