@@ -32,7 +32,7 @@
   "devDependencies": {
     "chromedriver": "^89.0.0",
     "eslint": "^6.5.1",
-    "kcd-scripts": "^5.0.0",
+    "kcd-scripts": "^9.0.0",
     "npm-run-all": "^4.1.5",
     "semantic-release": "^17.0.2",
     "serve": "^11.0.0"
