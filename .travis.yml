@@ -22,5 +22,5 @@ script: npm run validate
 after_success: npx semantic-release
 branches:
   only:
-    - master
+    - main
     - next
