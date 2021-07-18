@@ -41,6 +41,10 @@
     "type": "git",
     "url": "https://github.com/testing-library/nightwatch-testing-library.git"
   },
+  "engines": {
+    "node": ">=10",
+    "npm": ">=6"
+  },
   "release": {
     "branches": [
       "master",
