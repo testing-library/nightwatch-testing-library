@@ -14,7 +14,7 @@ jobs:
         os: [ubuntu-latest]
         node: [12, 10]
     steps:
-      - uses: nanasess/setup-chromedriver@master
+      - uses: nanasess/setup-chromedriver@v1
         with:
           chromedriver-version: '79.0.3945.36'
       - run: |
