@@ -1,7 +1,7 @@
 <div align="center">
 <h1>nightwatch-testing-library</h1>
 <a href="https://www.emojione.com/emoji/bat">
-<img height="100" width="100" alt="ox" src="https://raw.githubusercontent.com/testing-library/nightwatch-testing-library/master/other/bat.png" />
+<img height="100" width="100" alt="ox" src="https://raw.githubusercontent.com/testing-library/nightwatch-testing-library/main/other/bat.png" />
 
 </a>
 
@@ -31,7 +31,7 @@
 
 <div align="center">
 <a href="https://testingjavascript.com">
-<img width="500" alt="TestingJavaScript.com Learn the smart, efficient way to test any JavaScript application." src="https://raw.githubusercontent.com/kentcdodds/cypress-testing-library/master/other/testingjavascript.jpg" />
+<img width="500" alt="TestingJavaScript.com Learn the smart, efficient way to test any JavaScript application." src="https://raw.githubusercontent.com/kentcdodds/cypress-testing-library/main/other/testingjavascript.jpg" />
 </a>
 </div>
 
@@ -99,19 +99,19 @@ MIT
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
 [build-badge]: https://github.com/testing-library/nightwatch-testing-library/workflows/nightwatch-testing-library/badge.svg
-[build]: https://github.com/testing-library/nightwatch-testing-library/actions?query=branch%3Amaster+workflow%3Anightwatch-testing-library
+[build]: https://github.com/testing-library/nightwatch-testing-library/actions?query=branch%3Amain+workflow%3Anightwatch-testing-library
 [coverage]: https://codecov.io/github/testing-library/nightwatch-testing-library
 [version-badge]: https://img.shields.io/npm/v/@testing-library/nightwatch.svg?style=flat-square
 [package]: https://www.npmjs.com/package/@testing-library/nightwatch
 [downloads-badge]: https://img.shields.io/npm/dm/@testing-library/nightwatch.svg?style=flat-square
 [npmtrends]: http://www.npmtrends.com/@testing-library/nightwatch
 [license-badge]: https://img.shields.io/npm/l/@testing-library/nightwatch.svg?style=flat-square
-[license]: https://github.com/testing-library/nightwatch-testing-library/blob/master/LICENSE
+[license]: https://github.com/testing-library/nightwatch-testing-library/blob/main/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
 [donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]: https://github.com/testing-library/nightwatch-testing-library/blob/master/other/CODE_OF_CONDUCT.md
+[coc]: https://github.com/testing-library/nightwatch-testing-library/blob/main/other/CODE_OF_CONDUCT.md
 [github-watch-badge]: https://img.shields.io/github/watchers/testing-library/nightwatch-testing-library.svg?style=social
 [github-watch]: https://github.com/testing-library/nightwatch-testing-library/watchers
 [github-star-badge]: https://img.shields.io/github/stars/testing-library/nightwatch-testing-library.svg?style=social
